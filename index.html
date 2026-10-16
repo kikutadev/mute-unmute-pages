@@ -6,8 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <meta name="theme-color" content="#111929">
   <title>SOUND//PUNK — RUN THE MUSIC</title>
-  <script type="module" crossorigin src="./assets/index-C-jBn6nK.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Cxc_TXX3.css">
+  <script type="module" crossorigin src="./assets/index-Wj7NUWWB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bhx9cBFM.css">
 </head>
 <body>
   <main class="shell">
@@ -24,6 +24,7 @@
         <div class="start-actions">
           <button type="button" class="primary" id="play-btn">START RUN <span aria-hidden="true">↗</span></button>
           <button type="button" class="secondary" id="listen-btn">LISTEN / PREVIEW <span>♫</span></button>
+          <button type="button" class="secondary promo-button" id="promo-open-btn">WATCH THE WORLD <span aria-hidden="true">▷</span></button>
         </div>
         <small class="intro-note">CYBERPUNK PARKOUR · ORIGINAL 4-STEM MUSIC · WIP ART</small>
       </section>
@@ -83,5 +84,32 @@
     </section>
     <footer class="footer"><span>MOVE WITH THE MUSIC · BUILD YOUR SOUND.</span><span>ORIGINAL PROCEDURAL COMPOSITION · NO STOCK MUSIC</span></footer>
   </main>
+  <dialog id="promo-dialog" class="promo-dialog" aria-label="SOUND//PUNK 世界観とPV">
+    <div class="promo-dialog-inner">
+      <header class="promo-top">
+        <span class="eyebrow">SOUND//PUNK — WORLD PREVIEW</span>
+        <button type="button" id="promo-close-btn" class="promo-close" aria-label="PVを閉じる">× CLOSE</button>
+      </header>
+      <div class="promo-heading">
+        <h2>BEYOND THE <em>RUN.</em></h2>
+        <p>操作中は軽く、世界観は濃く。実3DモデルのPVとキービジュアルで、MIOのいる街を覗く。</p>
+      </div>
+      <nav class="promo-tabs" aria-label="紹介コンテンツ">
+        <button id="promo-watch-btn" type="button" aria-pressed="true">▶ CINEMATIC REEL</button>
+        <button id="promo-art-btn" type="button" aria-pressed="false">◇ KEY VISUAL</button>
+      </nav>
+      <section id="promo-video-pane" class="promo-media-pane">
+        <video id="promo-video" controls playsinline preload="metadata" loop muted
+          poster="./assets/promo/art/title-wide.webp"
+          aria-label="3DキャラクターのサイバーパンクPV動画"></video>
+        <p>REAL 3D MOTION · WORK IN PROGRESS · 本編の操作とは独立した世界観プレビュー</p>
+      </section>
+      <section id="promo-art-pane" class="promo-media-pane hidden">
+        <img id="promo-keyvisual" alt="SOUND//PUNK サイバーパンク都市を背景にしたMIOのキービジュアル"
+          loading="eager" src="./assets/promo/art/title-wide.webp">
+        <p>CHARACTER / CITY / STYLE — キャラクターの魅力を大きな画面で見せるアート</p>
+      </section>
+    </div>
+  </dialog>
 </body>
 </html>
