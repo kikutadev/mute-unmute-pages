@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <meta name="theme-color" content="#111929">
-  <title>MUTE / UNMUTE — Play the Silence</title>
-  <script type="module" crossorigin src="./assets/index-S7VIDz2Y.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BJlUdxmQ.css">
+  <title>SOUND//PUNK — RUN THE MUSIC</title>
+  <script type="module" crossorigin src="./assets/index-oKd0nv6p.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CL2_9QlS.css">
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <a class="brand" href="./" aria-label="MUTE UNMUTE ホーム"><span class="brand-symbol">M<span class="slash">/</span>U</span><span>MUTE <em>/</em> UNMUTE</span></a>
-      <div class="top-right"><span class="tag">LIVE AUDIO WORLD</span><button id="sound-btn" class="text-button" type="button" title="全体音量の切り替え">♪ SOUND ON</button></div>
+      <a class="brand" href="./" aria-label="SOUND PUNK ホーム"><span class="brand-symbol">S<span class="slash">//</span>P</span><span>SOUND <em>//</em> PUNK</span></a>
+      <div class="top-right"><span class="tag">AUTO-RUN · BUILD THE BEAT</span><button id="sound-btn" class="text-button" type="button" title="全体音量の切り替え">♪ SOUND ON</button></div>
     </header>
     <div class="viewport">
       <canvas id="world" role="img" aria-label="音楽に連動して街の床・住人・光が動くゲーム画面"></canvas>
       <section id="start-panel" class="overlay start-panel">
-        <div class="eyebrow">A CITY RUNS ON SOUND · ACTION RUNNER</div>
-        <h1>PLAY THE<br><i>SILENCE.</i></h1>
-        <p class="tagline">音を消すと、主人公が動き出す。<br>スライド・ジャンプ・ダッシュで駆け抜けろ。</p>
+        <div class="eyebrow">THE FASTER YOU FLOW · THE LOUDER THE CITY</div>
+        <h1>RUN THE<br><i>MUSIC.</i></h1>
+        <p class="tagline">走りは止まらない。ジャンプから壁走り、スライドへ。<br>コンボで音楽を育てろ。</p>
         <div class="start-actions">
-          <button type="button" class="primary" id="play-btn">PLAY THE CITY <span aria-hidden="true">↗</span></button>
-          <button type="button" class="secondary" id="listen-btn">LISTEN / MIX LAB <span>♫</span></button>
+          <button type="button" class="primary" id="play-btn">START RUN <span aria-hidden="true">↗</span></button>
+          <button type="button" class="secondary" id="listen-btn">LISTEN / PREVIEW <span>♫</span></button>
         </div>
-        <small class="intro-note">オリジナル4ステム / 128 BPM / ヘッドホン推奨</small>
+        <small class="intro-note">CYBERPUNK PARKOUR · ORIGINAL 4-STEM MUSIC · WIP ART</small>
       </section>
       <section id="pause-panel" class="overlay pause-panel hidden" aria-live="polite">
         <div class="eyebrow" id="pause-caption">PAUSED</div>
@@ -38,7 +38,7 @@
       </section>
       <section id="end-panel" class="overlay end-panel hidden" aria-live="polite">
         <div class="eyebrow" id="end-caption">TRACK COMPLETE</div>
-        <h2 id="end-title">YOU KEPT<br>THE CITY ALIVE.</h2>
+        <h2 id="end-title">YOU BUILT<br>THE BEAT.</h2>
         <p id="end-detail"></p>
         <div class="start-actions">
           <button type="button" class="primary" id="again-btn">PLAY AGAIN <span>↗</span></button>
@@ -52,28 +52,28 @@
       <div id="feedback" class="feedback" aria-live="polite"></div>
       <button id="pause-btn" class="pause-button hidden" type="button" aria-label="一時停止">Ⅱ</button>
     </div>
-    <section class="mixer" aria-label="音楽パートのミキサー">
+    <section class="mixer" aria-label="パルクール操作">
       <div class="mix-header">
-        <div><span class="eyebrow">LIVE MIXER</span><p>音を消すとアクション発動。<strong>再タップで音を戻す。</strong></p></div>
-        <div id="mix-status" class="mix-status">ALL CHANNELS LIVE</div>
+        <div><span class="eyebrow">PARKOUR CONTROLS</span><p>自動前進。<strong>コンボが続くほど楽器と音楽が増える。</strong></p></div>
+        <div id="mix-status" class="mix-status">BASE GROOVE</div>
       </div>
       <div class="channels">
-        <button class="channel drum" data-stem="drum" aria-pressed="false" type="button">
-          <div class="channel-index">01 <kbd>1</kbd></div><div class="signal-icon"><span></span><span></span><span></span><span></span><span></span></div>
-          <strong>DRUM</strong><small>SLIDE / しゃがむ</small><span class="channel-status">ON AIR</span>
+        <button class="channel bass" data-action="jump" type="button" aria-label="ジャンプ">
+          <div class="channel-index">01 <kbd>SPACE</kbd></div>
+          <strong>JUMP ↗</strong><small>JUMP / 跳ぶ</small><span class="channel-status">START CHAIN</span>
         </button>
-        <button class="channel bass" data-stem="bass" aria-pressed="false" type="button">
-          <div class="channel-index">02 <kbd>2</kbd></div><div class="signal-icon"><span></span><span></span><span></span><span></span><span></span></div>
-          <strong>BASS</strong><small>JUMP / 跳ぶ</small><span class="channel-status">ON AIR</span>
+        <button class="channel lead" data-action="wallrun" type="button" aria-label="壁走り">
+          <div class="channel-index">02 <kbd>W</kbd></div>
+          <strong>WALL RUN</strong><small>IN THE AIR / 壁走り</small><span class="channel-status">CHAIN</span>
         </button>
-        <button class="channel lead" data-stem="lead" aria-pressed="false" type="button">
-          <div class="channel-index">03 <kbd>3</kbd></div><div class="signal-icon"><span></span><span></span><span></span><span></span><span></span></div>
-          <strong>LEAD</strong><small>DASH / 突進</small><span class="channel-status">ON AIR</span>
+        <button class="channel drum" data-action="slide" type="button" aria-label="スライド">
+          <div class="channel-index">03 <kbd>S</kbd></div>
+          <strong>SLIDE ↘</strong><small>UNDER / くぐる</small><span class="channel-status">FLOW</span>
         </button>
-        <div class="channel chord no-touch">
-          <div class="channel-index">04 <span>∞</span></div><div class="signal-icon"><span></span><span></span><span></span><span></span><span></span></div>
-          <strong>CHORDS</strong><small>THE HEART</small><span class="channel-status">ALWAYS ON</span>
-        </div>
+        <button class="channel chord" data-action="dash" type="button" aria-label="ダッシュ">
+          <div class="channel-index">04 <kbd>D</kbd></div>
+          <strong>DASH →</strong><small>THROUGH / 突破</small><span class="channel-status">BOOST</span>
+        </button>
       </div>
       <div class="transport">
         <span id="mode-label">WAITING FOR THE FIRST BEAT</span>
@@ -81,7 +81,7 @@
         <span id="time-label">00:00 / 01:00</span>
       </div>
     </section>
-    <footer class="footer"><span>MADE OF RHYTHM. PLAYED BY SILENCE.</span><span>ORIGINAL PROCEDURAL COMPOSITION · NO STOCK MUSIC</span></footer>
+    <footer class="footer"><span>MOVE WITH THE MUSIC · BUILD YOUR SOUND.</span><span>ORIGINAL PROCEDURAL COMPOSITION · NO STOCK MUSIC</span></footer>
   </main>
 </body>
 </html>
